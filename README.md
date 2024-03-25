@@ -1,5 +1,7 @@
 <h1>Biofilm detection in metal explants using APOC pixel classifiers</h1>
 
+This repository makes use of Accelerated Object and Pixel (semantic) [APOC classifiers](https://github.com/haesleinhuepf/apoc) to segment fluorescent biofilm growing on metal explants extracted from animal models. It generalizes better across conditions when compared to a simple thresholding method.
+
 ![prediction_png](./images/prediction.png)
 
 <h2>Raw Data Download</h2>
@@ -27,6 +29,10 @@
 2. The ground truth annotations used in this particular analysis can be found under <code>data/biofilm_train/images</code> and <code>data/biofilm_train/masks</code>.
 
 <h2>Image Analysis</h2>
+
+1. Run <code>3_biofilm_meas.ipynb</code> to measure the plate percentage covered by biofilm from the cropped images stored under <code>data/cropped</code>. This will generate a .csv file with all the measurements and will open a Napari window so you can inspect the segmentation results overlaid over the cropped image. In addition it will store the predictions as .tiff files under <code>output/predictions</code>. The .csv file with the results can be found also inside <code>output</code>.
+
+2. Run <code>4_data_representation.ipynb</code> to obtain an in-notebook representation of all the input images and predictions. This will also generate a .pdf file to share the results with colleagues.
 
 <h2>Environment setup instructions</h2>
 
